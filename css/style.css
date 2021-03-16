@@ -1,0 +1,560 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #686868;
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* ---------- NAVIGATION ---------- */
+/*top bar*/
+.index-top-nav {
+    position: fixed;
+    width: 100%;
+    height: 48px;
+    background-color: #191919;
+    padding: 15px;
+    z-index: 3;
+    text-align: center;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid white;
+
+}
+
+.index-top-nav > h1 {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.4em;
+    margin: 0;
+    margin-left: 220px;
+}
+
+
+/*top bar les liens de création et connexion de membre*/
+.connexion {
+    z-index: 3;
+    position: absolute;
+    right: 4px;
+    top: 15px;
+}
+
+.connexion > a {
+    margin: 0 2px;
+    background-color: #484848;
+    padding: 3px 8px;
+}
+
+.co1 {
+    border-radius: 25px 0 0 25px;
+}
+
+.co2 {
+    border-radius: 0 25px 25px 0;
+}
+
+/* navigation index, left side */
+.index_nav_col_left {
+    position: fixed;
+    top: 48px;
+    width: 220px;
+    height: 95vh;
+    background-color: #191919;
+    padding: 15px;
+    margin: 0;
+    z-index: 3;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+    font-size: 0.8em;
+}
+
+.index_nav_col_left > ul > li > a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.index_nav_col_left > ul > li {
+    list-style: none;
+    padding: 16px;
+}
+
+.index_nav_col_left > .left_nav_top_ul > li:hover {
+    background-color: #191919;
+}
+
+.index_nav_col_left > ul {
+    padding-left: 0;
+    margin-left: -10px;
+    margin-right: -10px;
+    background-color: #686868;
+    box-shadow: 0 0 5px #000 inset;
+}
+
+.left_nav_top_ul {
+    margin-top: -10px;
+}
+
+.left_nav_top_ulOFF {
+    margin-top: -10px;
+}
+
+
+.color-priority{
+    display: block ruby;
+    margin-bottom: 20px;
+}
+
+#color-priority{
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+/* --------- div block central ---------- */
+.index_col_center {
+    position: relative;
+    margin-left: 220px;
+    padding: 60px 15px;
+    min-height: 100%;
+    z-index: 1;
+    text-align: center;
+}
+
+/* ---------- formulaire "raf" "communication" ---------- */
+h2 {
+    padding-left: 10px;
+    padding-bottom: 25px;
+    display: grid;
+    grid-template-rows: 20px;
+}
+
+.label-input-raf-form {
+    padding: 15px;
+    padding-left: 40px;
+}
+
+.col_form_left {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.col_form_right {
+    width: 500px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: -15px;
+}
+
+textarea {
+    width: 80%;
+    height: 140px;
+    padding: 6px 10px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+select, input, textarea {
+    margin-top: 6px;
+}
+
+.submit {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* -------- formulaire inscription membre ---------- */
+.table-center > tbody > tr > td {
+    text-align: right;
+}
+
+.table-center {
+    display: inline-block;
+}
+
+/* affichage si erreur sur le formulaire de nouveau raf */
+.error {
+    font-weight: 1000;
+    color: #e50000;
+}
+
+
+/* ---------- CARTE RAFS dans form-RAF ----------*/
+.display_raf {
+    width: 350px;
+    border: 3px solid red;
+    margin: 5px;
+    padding: 5px;
+    text-align: left;
+    border-radius: 15px;
+    background-color: #2e2e2e;
+    box-shadow: 0 0 3px #000;
+}
+
+.displayName {
+    text-align: left;
+    padding: 10px 5px;
+    margin: -5px;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    background-color: #191919
+}
+
+.displayEdit {
+    float: right;
+    margin-top: 9px;
+}
+
+.displayBaseInfo {
+    color: #949494;
+    display: contents;
+}
+
+.displayDescription {
+    margin-top: 44px;
+    max-width: 350px;
+    overflow-wrap: anywhere;
+}
+
+.displayDuration {
+    float: left;
+    margin-top: 15px;
+}
+
+.displayProject {
+    float: right;
+    margin-top: 15px;
+}
+
+.displayDeadline {
+    margin-top: 10px;
+    float: left;
+}
+
+.displayObs {
+    margin-top: 10px;
+    max-width: 350px;
+    overflow-wrap: anywhere;
+}
+
+.displayDDay {
+    margin-top: 10px;
+    float: right;
+}
+
+/* barre d'avancement % */
+.bg_third {
+    margin-top: 32px;
+    height: 4px;
+    background-color: #19191a;
+}
+
+.bg0text, .bg33text, .bg66text, .bg100text {
+    font-size: 0.8em;
+}
+
+.bg0text {
+    border-radius: 25px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin-top: -22px;
+    padding-top: 13px;
+    background-color: #19191a;
+
+}
+
+.bg33text {
+    border-radius: 25px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin-left: 27.012%;
+    margin-top: -22px;
+    padding-top: 13px;
+    background-color: #19191a;
+}
+
+.bg66text {
+    border-radius: 25px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin-left: 60.012%;
+    margin-top: -22px;
+    padding-top: 13px;
+    background-color: #19191a;
+}
+
+.bg100text {
+    border-radius: 25px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin-left: 88%;
+    margin-top: -22px;
+    padding-top: 13px;
+    background-color: #19191a;
+}
+
+
+/* ---------- PAGE DIAGRAMME ---------- */
+.index_col_center-diagramme {
+    position: relative;
+    margin-left: 220px;
+    padding: 60px 15px;
+    min-height: 100%;
+    text-align: center;
+}
+
+/* ensemble des graphiques alignés sur la page */
+.diaTime {
+    display: inline-flex;
+}
+
+/* ---------- DIAGRAM CENTRALE ---------- */
+.dia-center {
+    border: 1px solid black;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+/* div colonnes date + barre */
+.col {
+    width: 100px;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-align: -moz-center;
+    display: grid;
+    align-content: end;
+}
+
+/* date des semaines, aux dessus des barres */
+.date {
+    font-size: 0.7em;
+    margin-top: 5px;
+    width: 80px;
+    position: absolute;
+}
+
+/* barres du diagramme central */
+/* SEMAINE 1 */
+.barBase {
+    width: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+.barIncludeproject {
+    width: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+
+/*error bar si plus de 90 heures*/
+.error-height-bar {
+    max-width: 100px;
+    overflow: hidden;
+}
+
+/*ligne sur le diagramme central 0h -> 35h*/
+.line0 {
+    position: relative;
+    top: 276px;
+    left: -501px;
+    height: 10px;
+}
+
+.line-graduation {
+    border-bottom: 1px black solid;
+    width: 500px;
+}
+
+.graduation {
+    position: relative;
+    left: -21px;
+    top: 10px;
+    background-color: #000;
+    color: white;
+    padding: 0.1em;
+    width: 22px;
+    height: 22px;
+}
+
+.line35 {
+    position: relative;
+    top: 171px;
+    left: -1001px;
+    height: 10px;
+    z-index: 1;
+}
+
+.line-graduation35 {
+    border-bottom: 1px black solid;
+    width: 500px;
+}
+
+/*font awesome dans le tableau des RAFS*/
+.fas {
+    position: relative;
+}
+
+.fasCheckDia {
+    color: #138D00;
+}
+
+/* ---------- DIAGRAM PIE GAUCHE ---------- */
+.pie-left {
+    margin-right: 50px;
+}
+
+.pie-left-php {
+    margin-top: 25px;
+}
+
+/*SOUS LE DIAGRAM DE GAUCHE*/
+.cat_under_pie_color {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px -1px 0;
+    border: #191919 solid 1px
+}
+
+.cat_under_pie {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+/* ---------- DIAGRAM DROITE ---------- */
+
+.pie-right {
+    margin-left: 50px;
+}
+
+.pie-right-php {
+    margin-top: 25px;
+}
+
+/* ---------- TABLEAU DES RAFS ---------- */
+.table-sort {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    text-align: center;
+    display: inline-table;
+}
+
+.table-sort > thead > tr > th {
+    border: 1px solid black;
+    padding: 4px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.table-sort > tbody > tr > td {
+    border: 1px solid black;
+    padding: 4px 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+/* taille des cellules du tableau RAFS */
+.td1, .td9 {
+    min-width: 110px;
+    max-width: 110px;
+}
+
+.td10 {
+    min-width: 80px;
+    max-width: 80px;
+}
+
+.td3 {
+    min-width: 140px;
+    max-width: 140px;
+}
+
+.td4, .td5 {
+    min-width: 220px;
+    max-width: 220px;
+}
+
+.td2 {
+    max-width: 60px;
+    min-width: 60px;
+}
+
+.td6, .td7, .td8 {
+    min-width: 50px;
+    max-width: 200px;
+}
+
+.td11 {
+    min-width: 150px;
+    max-width: 300px;
+}
+
+.table-sort tr:hover td {
+    background-color: #fff;
+    color: #000;
+}
+
+.table-sort th {
+    background-color: #191919;
+}
+
+/*fichier includeInProject.php*/
+.addColor {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin: -4px 20px -4px 2px;
+}
+
+.addCategories {
+    margin-top: 25px;
+}
+
+/*------------------ MANAGMENT ------------------*/
+/* REQ DELETE / MODIFICATION AUTHOR & INCLUDEINPROJECT*/
+
+.fa-user-times:hover{
+    color: red;
+}
+.del-managment h4 {
+    text-decoration: underline;
+    margin-top: 100px;
+    margin-bottom: -30px;
+}
+
+.fa-user-edit:hover{
+    color: #1eff1e;
+}
+
+.table-managment>tbody>tr>td{
+    width: 100px;
+    padding: 5px 0;
+}
+
+.table-managment{
+    display: inline-flex;
+}
+.table-managment>tbody>tr>.td_name{
+    width: 200px;
+}
