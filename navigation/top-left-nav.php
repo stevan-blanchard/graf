@@ -33,6 +33,9 @@
     <ul class="left_nav_top_ul">
         <li><a href="../diagramme/diagramme-time-left.php">Diagramme des RAF</a></li>
         <li><a href="../historique/hist-modif.php">Historique de modification</a></li>
-        <li><a href="../transfert/import.php">Changer l'image d'exportation</a></li>
+    </ul>
+
+    <ul class='left_nav_top_ulOFF'>
+        <li><a href="../Licence_CeCILL_V2.1-fr.html">Protègé par la licence CeCILL_v2.1fr</a></li>
     </ul>
 </div>

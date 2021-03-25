@@ -164,11 +164,22 @@ try{
     $pdf->Ln();
     $pdf->headerTable();
     //on affiche les elements RAF de la basse de donnée corespondant au projet.
+    $i=0;
     while($display = $element->fetch(PDO::FETCH_ASSOC)){
+        //on affiche une nouvelle page après avoir afficher 5 raf
+        if($i == 5 ){
+            $pdf->AddPage('L', 'A4', 0);
+        }
+        //puissque sur une nouvelle page on peux afficher 7 RAF 
+        //alors on vient modifier la condition
+        elseif($i % 6 == 0 && $i != 0 && $i!=6){
+            $pdf->AddPage('L', 'A4', 0);
+        }
         $auteur = $dbh->prepare("SELECT * FROM author WHERE id ='" . $display['author_id'] . "'");
         $auteur->execute();
         $nomAuteur = $auteur->fetch()[1];
         $pdf->viewTable($nomAuteur, $display);
+        $i++;
     }
     $pdf->Output("I","Export ".$projetName." ".$today,1);
 }

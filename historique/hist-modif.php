@@ -31,7 +31,7 @@ $_version = 1.5;
 </header>
 <main>
     <div class="index_col_center">
-        <h2><a href="index.php">historique des Restes à faire </a></h2>
+        <h2>historique des Restes à faire</h2>
 
         <form action="./hist-modif.php">
         <label for="auteur">Affichage par auteur:</label>

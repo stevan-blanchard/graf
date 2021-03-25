@@ -78,6 +78,10 @@ $reqDelIncl->execute();
                 }
             }
             echo "</table>"; ?>
+            </br>
+            </br>
+            <li><a href="../transfert/import.php">Changer l'image d'exportation</a></li>
+            
         </div>
         <!--script pour confirmer ou non la suppression d'un reste à faire-->
         <script>
