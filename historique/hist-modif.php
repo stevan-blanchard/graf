@@ -37,6 +37,7 @@ $_version = 1.5;
         <label for="auteur">Affichage par auteur:</label>
 
         <select name="auteur" id="auteur">
+	<option value="-1">---sélectionner un auteur---</option>
             <?php
                 $authorSelect = $dbh->prepare("SELECT id, name FROM author");
                 $authorSelect->execute();
@@ -47,13 +48,10 @@ $_version = 1.5;
 
             ?>
         </select>
-        <input type="submit" value="Submit">
-        </form>
-
-        <form action="./hist-modif.php">
+	</br>
         <label for="projet">Affichage par projet:</label>
-
         <select name="projet" id="projet">
+	<option value="-1">---sélectionner un projet---</option>
             <?php
                 $authorSelect = $dbh->prepare("SELECT id, name FROM includeInProjects");
                 $authorSelect->execute();
@@ -64,9 +62,24 @@ $_version = 1.5;
 
             ?>
         </select>
-        <input type="submit" value="Submit">
-        </form>
+	</br>
+        <label for="auteur">Affichage par pourcentagge de finition :</label>
+	<input type="radio" id="13" name="un_Tiers" value="1">
+  	<label for="13">1/3</label>
+	<input type="radio" id="23" name="deux_Tiers" value="1">
+        <label for="23">2/3</label>
+	<input type="radio" id="33" name="trois_Tiers" value="1">
+        <label for="33">3/3</label><br>
 
+	</br>
+	<label for="auteur">date limite dépassée:</label>
+        <input type="radio" id="limit_yes" name="limit_yes" value="1">
+	<label for="limit_yes">oui</label>
+	<input type="radio" id="limit_no" name="limit_no" value="1">
+	<label for="limit_no">non</label>
+	</br>
+        <input type="submit" value="Submit">
+	</form>
         </br>
         </br>
 
@@ -79,6 +92,15 @@ $_version = 1.5;
             $displayRaf = $dbh->prepare("SELECT * FROM old_RAF where includeInProject_id = ".$_GET['projet'].";");
             $displayRaf->execute();
         }
+	//$pourcent;
+	else if($get["poucent"] != NULL){
+	  //  if($get["pourcent"] = 13){$pourcent = "un_tiers";}
+	   // else if ($get["pourcent"] = 23){$pourcent = "deux_tiers";}
+	    //else if ($get["pourcent"] = 33){$pourcent = "trois_tiers";}
+
+	   // $displayRaf = $dbh->prepare("Select * FROM old_RAF where ".$pourcent. "= 1");
+           // $displayRaf->execute();
+	}
         else{
             $displayRaf = $dbh->prepare("SELECT * FROM old_RAF");
             $displayRaf->execute();
