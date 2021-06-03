@@ -64,19 +64,17 @@ $_version = 1.5;
         </select>
 	</br>
         <label for="auteur">Affichage par pourcentagge de finition :</label>
-	<input type="radio" id="13" name="un_Tiers" value="1">
+	<input type="radio" id="13" name="un_tiers" value="1">
   	<label for="13">1/3</label>
-	<input type="radio" id="23" name="deux_Tiers" value="1">
+	<input type="radio" id="23" name="deux_tiers" value="1">
         <label for="23">2/3</label>
-	<input type="radio" id="33" name="trois_Tiers" value="1">
+	<input type="radio" id="33" name="trois_tiers" value="1">
         <label for="33">3/3</label><br>
 
 	</br>
 	<label for="auteur">date limite dépassée:</label>
         <input type="radio" id="limit_yes" name="limit_yes" value="1">
 	<label for="limit_yes">oui</label>
-	<input type="radio" id="limit_no" name="limit_no" value="1">
-	<label for="limit_no">non</label>
 	</br>
         <input type="submit" value="Submit">
 	</form>
@@ -84,27 +82,21 @@ $_version = 1.5;
         </br>
 
         <?php
-        if($_GET["auteur"] != NULL && $_GET["projet"] == NULL){
-            $displayRaf = $dbh->prepare("SELECT * FROM old_RAF where author_id = ".$_GET['auteur'].";");
+        if($_GET["auteur"] != NULL || $_GET["projet"] != NULL){
+	    $req = "SELECT * FROM old_RAF where 1=1 ";
+	    if($_GET["auteur"] != -1){$req.="AND author_id = ".$_GET['auteur']." ";}
+	    if($_GET["projet"] != -1){$req.="AND includeInProject_id = ".$_GET['projet']." ";}
+	    if($_GET["un_tiers"] != NULL){$req.="AND un_tiers = ".$_GET['un_tiers']." ";}
+	    if($_GET["deux_tiers"] != NULL){$req.="AND deux_tiers = ".$_GET['deux_tiers']." ";}
+	    if($_GET["trois_tiers"] != NULL){$req.="AND trois_tiers = ".$_GET['trois_tiers']." ";}
+      	    if($_GET["limit_yes"] != NULL){$req.="AND deadline <= now() ";}
+            $displayRaf = $dbh->prepare($req);
             $displayRaf->execute();
         }
-        else if($_GET["auteur"] == NULL && $_GET["projet"] != NULL){
-            $displayRaf = $dbh->prepare("SELECT * FROM old_RAF where includeInProject_id = ".$_GET['projet'].";");
+	else {
+	$displayRaf = $dbh->prepare("SELECT * FROM old_RAF;");
             $displayRaf->execute();
-        }
-	//$pourcent;
-	else if($get["poucent"] != NULL){
-	  //  if($get["pourcent"] = 13){$pourcent = "un_tiers";}
-	   // else if ($get["pourcent"] = 23){$pourcent = "deux_tiers";}
-	    //else if ($get["pourcent"] = 33){$pourcent = "trois_tiers";}
-
-	   // $displayRaf = $dbh->prepare("Select * FROM old_RAF where ".$pourcent. "= 1");
-           // $displayRaf->execute();
 	}
-        else{
-            $displayRaf = $dbh->prepare("SELECT * FROM old_RAF");
-            $displayRaf->execute();
-        }
         ?>
 
         <table id='tab' class='table-sort'>
